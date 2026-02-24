@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeonCart Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>NeonCart</h1>
+      <nav>
+        <a href="#products">Products</a>
+        <a href="#cart">Active Cart</a>
+        <a href="#checkout">Checkout</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="hero">
+        <h2>Dark Mode Marketplace</h2>
+        <p>Shop premium picks with a vivid neon look inspired by your reference style.</p>
+      </section>
+
+      <section id="products">
+        <div class="section-head">
+          <h3>Featured Products</h3>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+      </section>
+    </main>
+
+    <aside id="cart" class="cart-panel">
+      <h3>Active Cart <span id="cart-count">0</span></h3>
+      <ul id="cart-items"></ul>
+      <div class="totals">
+        <p>Subtotal</p>
+        <strong id="cart-total">$0.00</strong>
+      </div>
+
+      <form id="checkout" class="checkout-form">
+        <h4>Place Order</h4>
+        <input id="name" name="name" type="text" placeholder="Full Name" required />
+        <input id="email" name="email" type="email" placeholder="Email" required />
+        <textarea id="address" name="address" rows="3" placeholder="Shipping Address" required></textarea>
+        <button type="submit">Submit Order</button>
+      </form>
+      <p id="status" class="status"></p>
+    </aside>
+  </div>
+
+  <template id="product-template">
+    <article class="card">
+      <img alt="" />
+      <div class="card-body">
+        <h4></h4>
+        <p class="desc"></p>
+        <div class="price-row">
+          <span class="price"></span>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
